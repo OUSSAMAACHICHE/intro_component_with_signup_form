@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+:root {
+	/* ### Primary */
+
+--Red: hsl(0, 100%, 74%) ;
+--Green: hsl(154, 59%, 51%);
+
+/* ### Accent */
+
+--Blue: hsl(248, 32%, 49%);
+
+/* ### Neutral */
+
+--DarkBlue: hsl(249, 10%, 26%) ;
+--GrayishBlue: hsl(246, 25%, 77%);
+
+--shadow: 0px 8px 0px hsla(248, 32%, 49%, 0.305);
+}
+body {
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	position: relative;
+
+}
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+  }
+
+  .attribution a {
+	color: hsl(228, 45%, 44%);
+  }
+/*Start Styling */
+main {
+	width: 100%;
+	min-height: 100vh;
+	background-image: url(../images/bg-intro-mobile.png);
+	background-position: top center;
+	background-size: contain;
+	background-attachment: fixed;
+	background-repeat: repeat;
+	padding: 25px;
+	text-align: center;
+	position: relative;
+}	
+ .overlay {
+	position: absolute;
+	background-color: var(--Red);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+main .info {
+	color: #fff;
+	
+}
+.info .title {
+	font-weight: 700;
+	line-height: 1.3;
+	margin-top: 40px;
+	font-size: 1.3rem;
+}
+.info .description {
+	margin: 20px 0px 50px;
+	font-weight: 400;
+	line-height: 1.5;
+	font-size: 1rem;
+}
+/* Start Styling sign-up section  */
+main .sign-up {
+	box-shadow: var(--shadow);
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+.sign-up .sign-up-hint {
+	color: #fff;
+	background-color: var(--Blue);
+	padding: 15px 50px;
+	line-height: 1.5;
+	border-radius: 10px;
+	color: var(--GrayishBlue);
+	margin-bottom: 20px;
+	box-shadow: var(--shadow);
+}
+.sign-up .sign-up-hint .special {
+	color: #fff;
+	font-weight: 500;
+}
+/*Start Styling form */
+.sign-up form {
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 20px;
+
+}
+
+.sign-up form input {
+	display: block;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid var(--GrayishBlue);
+	border-radius: 5px;
+}
+/* .sign-up form input:not(:last-child):focus {
+	outline: none;
+} */
+.error {
+	border: 2px solid var(--Red) !important;
+	background-image: url(../images/icon-error.svg);
+	background-repeat: no-repeat;
+	background-position: 95% center;
+	outline: none !important;
+}
+.sign-up form .error-text {
+	margin-top: -20px;
+	margin-bottom: 20px;
+	text-align: right;
+	color: var(--Red);
+	font-weight: 500;
+	visibility: hidden;
+}
+.sign-up form .error-text.visible {
+	visibility: visible;
+}
+
+.sign-up form input::placeholder {
+	color: var(--Blue);
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+.sign-up form input:focus {
+	background-color: transparent;
+}
+.sign-up form input[type="submit"] {
+	background-color: var(--Green);
+	border: none;
+	color: #fff;
+	font-weight: 500;
+	text-transform: uppercase;
+	box-shadow: 0px 5px 0px hsla(154, 65%, 45%, 0.928);
+	cursor: pointer;
+}
+.sign-up form input[type="submit"]:focus {
+	transform: scale(0.9);
+}
+.sign-up form input[type="submit"]:hover {
+	opacity: .9;
+}
+.sign-up form small {
+	color: var(--GrayishBlue);
+	display: block;
+	line-height: 1.8;
+}
+.sign-up form small span {
+	color: var(--Red);
+	font-weight: 700;
+	cursor: pointer;
+}
+
+/*Start media quiry */
+
+/* large screen  */
+@media screen and (min-width: 990px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(2,minmax(400px,500px));
+	    column-gap: 40px;
+		align-items: center;
+		justify-content: center;
+		background-image: url(../images/bg-intro-desktop.png);
+		column-gap: 80px;
+		background-position: center;
+		background-attachment: fixed;
+		background-size: contain;
+	}
+	.info .title {
+		font-size: 2.5rem;
+		text-align: left;
+		margin: 0;
+	}
+	.info .description {
+		font-size: 1rem;
+		text-align: left;
+		/* margin: 0; */
+	}
+	main .sign-up {
+		margin-bottom: 0;
+	}
+}
